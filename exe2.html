@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada de um numero</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input, button {
+        padding: 10px;
+        font-size: 16px;
+      }
+      #resultado {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+    
+    <h1>escolha um numero para sua tabuada </h1>
+  <input type="number" id="numero" placeholder="Digite um número"/>
+  <button onclick="verificar()">Verificar</button>
+
+
+    <script>
+
+    
+        function verificar(){
+            for (let n2 = 1; n2<= 10; n2++) {
+            var n1=parseInt(document.getElementById("numero").value);
+            const mult= n1*n2;
+
+            console.log(`tabuada ${n1} x ${n2} =${mult}`);
+            
+}
+}
+
+    </script>
+</body>
+</html>
