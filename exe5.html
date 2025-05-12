@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inverter Palavra</title>
+</head>
+<body>
+  <h2>Inverter Palavra</h2>
+
+  <input type="text" id="entrada" placeholder="Digite uma palavra">
+  <button onclick="inverterPalavra()">Inverter</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function inverterPalavra() {
+      let palavra = document.getElementById("entrada").value;
+      let invertida = palavra.split("").reverse().join("");
+      document.getElementById("resultado").textContent = "Invertida: " + invertida;
+    }
+  </script>
+</body>
+</html>

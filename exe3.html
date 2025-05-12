@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #output { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h2>Escolha seu número:</h2>
+    <input type="number" id="numero" placeholder="Digite um número" />
+    <button onclick="contar()">Contar</button>
+
+    <div id="output"></div>
+
+    <script>
+        function contar() {
+            const numero = parseInt(document.getElementById("numero").value);
+            const output = document.getElementById("output");
+            output.innerHTML = ""; // limpa saída anterior
+
+            if (isNaN(numero)) {
+                output.innerHTML = "Por favor, digite um número válido.";
+                return;
+            }
+
+            if (numero === 0) {
+                for (let i = 0; i <= 100; i++) {
+                    const p = document.createElement("p");
+                    p.textContent = i;
+                    output.appendChild(p);
+                }
+            } else {
+                for (let i = 0; i <= numero; i++) {
+                    const p = document.createElement("p");
+                    p.textContent = i;
+                    output.appendChild(p);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

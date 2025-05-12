@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Somar Números</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { margin: 5px 0; }
+        #resultado { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Digite números para somar (0 encerra):</h2>
+
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <div id="resultado"></div>
+
+    <script>
+        let soma = 0;
+        let terminou = false;
+
+        function adicionarNumero() {
+            if (terminou) return;
+
+            const input = document.getElementById("numero");
+            const valor = parseInt(input.value);
+            const resultado = document.getElementById("resultado");
+
+            if (isNaN(valor)) {
+                resultado.textContent = "Digite um número válido.";
+                return;
+            }
+
+            if (valor === 0) {
+                resultado.textContent = "Soma total: " + soma;
+                terminou = true;
+            } else {
+                soma += valor;
+                resultado.textContent = "Soma parcial: " + soma;
+            }
+
+            input.value = "";
+            input.focus();
+        }
+    </script>
+
+</body>
+</html>
