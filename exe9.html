@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+          <h2>Contar Vogais em uma Palavra</h2>
+
+    <label for="palavra">Digite uma palavra:</label>
+    <input type="text" id="palavra" placeholder="Ex: abacaxi">
+    <button onclick="contarVogais()">Contar Vogais</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function contarVogais() {
+            var palavra = document.getElementById("palavra").value.toLowerCase();
+            var resultado = document.getElementById("resultado");
+
+            if (!palavra || palavra.trim() === "") {
+                resultado.innerText = "Por favor, digite uma palavra válida.";
+                return;
+            }
+
+            var vogais = ['a', 'e', 'i', 'o', 'u'];
+            var contador = 0;
+
+            for (var i = 0; i < palavra.length; i++) {
+                if (vogais.includes(palavra[i])) {
+                    contador++;
+                }
+            }
+
+            resultado.innerText = "A palavra \"" + palavra + "\" contém " + contador + " vogal(is).";
+        }
+    </script>
+
+
+
+
+</body>
+</html>

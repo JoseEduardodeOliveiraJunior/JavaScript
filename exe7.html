@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+ <h2>Verificar se um Número é Primo</h2>
+
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" placeholder="Ex: 7">
+    <button onclick="verificarPrimo()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarPrimo() {
+            var num = parseInt(document.getElementById("numero").value);
+            var resultado = document.getElementById("resultado");
+
+            if (isNaN(num) || num < 1) {
+                resultado.innerText = "Por favor, digite um número inteiro positivo.";
+                return;
+            }
+
+            if (num === 1) {
+                resultado.innerText = "1 não é primo.";
+                return;
+            }
+
+            // Verifica se é primo
+            var ehPrimo = true;
+            for (var i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    ehPrimo = false;
+                    break;
+                }
+            }
+
+            if (ehPrimo) {
+                resultado.innerText = num + " é um número primo.";
+            } else {
+                resultado.innerText = num + " não é um número primo.";
+            }
+        }
+    </script>
+    <body>

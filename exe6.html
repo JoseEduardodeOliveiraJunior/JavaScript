@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+      <h2>Encontrar o Maior Número</h2>
+
+    <label for="numeros">Digite uma lista de números separados por vírgula:</label><br>
+    <input type="text" id="numeros" placeholder="Ex: 10, 4, 56, 23"><br><br>
+    <button onclick="encontrarMaior()">Encontrar Maior</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function encontrarMaior() {
+            // Captura a entrada e separa os números
+            var entrada = document.getElementById("numeros").value;
+            var lista = entrada.split(",").map(function(num) {
+                return parseFloat(num.trim());
+            });
+
+            // Verifica se todos os elementos são números válidos
+            if (lista.some(isNaN)) {
+                document.getElementById("resultado").innerText = "Por favor, digite apenas números válidos separados por vírgula.";
+                return;
+            }
+
+            // Encontra o maior número
+            var maior = Math.max(...lista);
+
+            // Exibe o resultado
+            document.getElementById("resultado").innerText = "Maior número: " + maior;
+        }
+    </script>
+    
+</body>
+</html>
